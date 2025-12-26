@@ -1,67 +1,87 @@
-#ProjectCamp Backend
+##ProjectCamp Backend
 
-ProjectCamp is a backend REST API built for team-based project collaboration. It’s designed to handle real-world project workflows where different users have different responsibilities and permissions.
+ProjectCamp is a backend REST API built for team-based project collaboration. It focuses on real-world workflows where users have different responsibilities and permissions, instead of giving everyone the same level of access.
 
-Instead of treating everyone the same, ProjectCamp uses a role-based system so teams can work in a more structured and secure way.
+This project serves as a secure, scalable foundation for any project management frontend.
 
-What problem does it solve?
+Why ProjectCamp Exists
 
-Most project management tools give all users equal access. That works for small teams, but it quickly becomes messy as projects grow.
+Most project management tools treat all users the same. That might work early on, but as teams grow, it leads to confusion and poor access control.
 
-ProjectCamp fixes this by introducing clear roles:
+ProjectCamp solves this by introducing role-based access control, ensuring users can only do what their role allows.
 
-Admin – full system control
+Role Structure
 
-Project Admin – manages projects and tasks
+The system is built around three main roles:
 
-Member – collaborates and updates assigned work
+Admin
 
-Every request to the API is checked to ensure the user is authenticated and allowed to perform that action.
+Full system access
 
-How it works (simple view)
+Can manage users and projects
 
-The backend acts as the middle layer between a frontend and the database.
+Project Admin
 
-A user sends a request (login, create task, update status, etc.)
+Manages projects and tasks
 
-The API verifies the user using JWT authentication
+Assigns work and updates project details
+
+Member
+
+Views assigned tasks
+
+Updates task status and collaborates
+
+Every API request is validated against the user’s role before being processed.
+
+How the Backend Works
+
+ProjectCamp acts as the middle layer between a frontend and the database.
+
+A request is sent from the client
+
+The API verifies authentication using JWT
 
 The user’s role is checked
 
-If permitted, the request is processed and saved to the database
+If authorized, the request is processed and stored
 
-If not permitted, the request is blocked.
+Otherwise, access is denied
 
-Tech stack
+This ensures both security and predictable behavior.
+
+Tech Stack
 
 Node.js
 
 Express.js
 
-MongoDB with Mongoose
+MongoDB
 
-JWT for authentication
+Mongoose
 
-Bcrypt for password hashing
+JSON Web Tokens (JWT)
 
-Nodemailer for email verification and password resets
+Bcrypt
 
-Express Validator for request validation
+Nodemailer
 
-Centralized error handling and CORS configuration
+Express Validator
 
-What’s implemented so far
+CORS and centralized error handling
+
+Features Implemented
 Authentication & Security
 
 User registration and login
 
 JWT-based authentication
 
-Email verification
+Email verification flow
 
-Password reset flow
+Password reset functionality
 
-Encrypted password storage
+Secure password hashing
 
 Input validation and error handling
 
@@ -77,39 +97,47 @@ User profiles
 
 Email verification
 
-Secure password management
+Password management
 
-What’s coming next
+Upcoming Features
+Project Management
 
-Project creation and management
+Create, update, and delete projects
 
-Task and subtask handling
+Manage project members
 
-Task status tracking (Todo / In Progress / Done)
+Task Management
+
+Create and assign tasks
+
+Task status tracking (Todo, In Progress, Done)
+
+Subtasks support
+
+Update and delete tasks
+
+Additional Features
 
 Project notes
 
 File uploads and attachments
 
-Team member invitations and role management
+Team invitations and role updates
 
-Why this project exists
+Current Status
 
-This project is built to understand how production-grade backend systems work.
-It focuses on clean architecture, security, and scalability rather than shortcuts.
+Authentication: Completed
 
-It’s also a portfolio project that reflects real backend development patterns you’d expect in professional applications.
+Security framework: Completed
 
-And yes, it involved a lot of debugging late at night.
-
-Current status
-
-Authentication: Done
-
-Security framework: Done
-
-API structure: Done
+API structure: Completed
 
 Projects & tasks: In progress
 
 File management: Planned
+
+Purpose of This Project
+
+This project is built to understand how production-level backend systems are structured. It emphasizes security, scalability, and clean architecture.
+
+It also serves as a portfolio project that demonstrates practical backend development skills beyond basic CRUD APIs.
