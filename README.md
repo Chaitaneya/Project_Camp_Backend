@@ -1,4 +1,4 @@
-# ProjectCamp Backend
+## ProjectCamp Backend
 
 ProjectCamp is a backend REST API system designed for team collaboration on projects. Think of it like a digital project management tool where teams can organize their work, assign tasks, track progress, and stay connected - all through an API that other applications can connect to.
 
