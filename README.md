@@ -1,143 +1,83 @@
-##ProjectCamp Backend
-
-ProjectCamp is a backend REST API built for team-based project collaboration. It focuses on real-world workflows where users have different responsibilities and permissions, instead of giving everyone the same level of access.
-
-This project serves as a secure, scalable foundation for any project management frontend.
-
-Why ProjectCamp Exists
-
-Most project management tools treat all users the same. That might work early on, but as teams grow, it leads to confusion and poor access control.
-
-ProjectCamp solves this by introducing role-based access control, ensuring users can only do what their role allows.
-
-Role Structure
-
-The system is built around three main roles:
-
-Admin
-
-Full system access
-
-Can manage users and projects
-
-Project Admin
-
-Manages projects and tasks
-
-Assigns work and updates project details
-
-Member
-
-Views assigned tasks
-
-Updates task status and collaborates
-
-Every API request is validated against the user’s role before being processed.
-
-How the Backend Works
-
-ProjectCamp acts as the middle layer between a frontend and the database.
-
-A request is sent from the client
-
-The API verifies authentication using JWT
-
-The user’s role is checked
-
-If authorized, the request is processed and stored
-
-Otherwise, access is denied
-
-This ensures both security and predictable behavior.
-
-Tech Stack
-
-Node.js
-
-Express.js
-
-MongoDB
-
-Mongoose
-
-JSON Web Tokens (JWT)
-
-Bcrypt
-
-Nodemailer
-
-Express Validator
-
-CORS and centralized error handling
-
-Features Implemented
-Authentication & Security
-
-User registration and login
-
-JWT-based authentication
-
-Email verification flow
-
-Password reset functionality
-
-Secure password hashing
-
-Input validation and error handling
-
-Role-Based Access Control
-
-Admin, Project Admin, and Member roles
-
-Permission checks on protected routes
-
-User Management
-
-User profiles
-
-Email verification
-
-Password management
-
-Upcoming Features
-Project Management
-
-Create, update, and delete projects
-
-Manage project members
-
-Task Management
-
-Create and assign tasks
-
-Task status tracking (Todo, In Progress, Done)
-
-Subtasks support
-
-Update and delete tasks
-
-Additional Features
-
-Project notes
-
-File uploads and attachments
-
-Team invitations and role updates
-
-Current Status
-
-Authentication: Completed
-
-Security framework: Completed
-
-API structure: Completed
-
-Projects & tasks: In progress
-
-File management: Planned
-
-Purpose of This Project
-
-This project is built to understand how production-level backend systems are structured. It emphasizes security, scalability, and clean architecture.
-
-It also serves as a portfolio project that demonstrates practical backend development skills beyond basic CRUD APIs.
+# ProjectCamp Backend
+
+ProjectCamp is a backend REST API system designed for team collaboration on projects. Think of it like a digital project management tool where teams can organize their work, assign tasks, track progress, and stay connected - all through an API that other applications can connect to.
+
+## The Problem It Solves
+
+Most project management tools treat all users the same. Everyone gets equal access, which creates chaos. ProjectCamp solves this by implementing a role-based system where different team members have different permissions based on their role.
+
+## How It Works
+
+Imagine a company structure:
+
+- **CEO (Admin):** Can create new projects, invite people, manage everything
+- **Project Manager (Project Admin):** Can create tasks, assign work, manage project details
+- **Team Member (Member):** Can view work, update their tasks, collaborate
+
+When someone wants to do something (like create a project or update a task), they send a request to the API. The API checks: "Are you logged in? What's your role? Are you allowed to do this?" If yes, it happens. If no, it gets blocked.
+
+## Technology Stack
+
+- **Node.js:** The runtime environment.
+- **Express.js:** The web application framework for handling requests.
+- **MongoDB:** The NoSQL database for data storage.
+- **JWT (JSON Web Tokens):** For secure user authentication.
+- **Bcrypt:** For password encryption.
+- **Mongoose:** An ODM (Object Data Modeling) library for MongoDB.
+- **Nodemailer:** For sending emails (e.g., verification, password resets).
+- **Express Validator:** For data validation.
+
+## Features
+
+### Completed
+
+-   **User Authentication System**
+    -   User registration with email and password.
+    -   User login and JWT generation.
+    -   Secure password encryption.
+    -   Email verification system.
+    -   Password reset functionality.
+-   **Role-Based Access Control (RBAC)**
+    -   Differentiated permissions for different user roles (Admin, Project Admin, Member).
+-   **Security Layers**
+    -   JWT-based authentication.
+    -   Password encryption.
+    -   Input validation.
+    -   CORS configuration.
+    -   Centralized error handling.
+-   **User Management**
+    -   User profiles with avatars.
+    -   Email verification status.
+    -   Password management.
+
+### Roadmap (To Be Built)
+
+-   **Project Management**
+    -   CRUD operations for projects.
+    -   Project member management.
+-   **Task Management**
+    -   CRUD operations for tasks within projects.
+    -   Task assignment.
+    -   Task status tracking (Todo, In Progress, Done).
+    -   Sub-task creation.
+-   **Project Notes**
+    -   CRUD operations for project-specific notes.
+-   **File Attachments**
+    -   File uploads for tasks.
+    -   Secure file storage and management.
+-   **Team Member Management**
+    -   Invite members to projects.
+    -   Manage member roles.
+    -   Remove members from projects.
+
+## Current Status
+
+-   Authentication: ✅ Done
+-   Security Framework: ✅ Done
+-   API Structure: ✅ Done
+-   Projects & Tasks: ⏳ In progress
+-   File Management: ⏳ Coming soon
+
+## Why This Project?
+
+This project serves as a practical application for learning and demonstrating backend development concepts. It aims to solve a real-world problem of disorganized project collaboration by providing a structured, role-based system. It's a comprehensive portfolio piece showcasing an understanding of full-stack principles from the ground up.
